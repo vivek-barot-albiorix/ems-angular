@@ -1,1 +1,47 @@
-<p>add-employee works!</p>
+<div id="registration" class="conatiner col-md-12">
+  <form id="regForm" [formGroup]="registrationForm">
+    <mat-horizontal-stepper #stepper linear>
+      <mat-step
+        formGroupName="personalDetails"
+        [stepControl]="registrationForm.get('personalDetails')"
+      >
+        <ng-template matStepLabel>Personal Details</ng-template>
+        <app-personal-detail [regForm]="registrationForm"></app-personal-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="contactDetails"
+        [stepControl]="registrationForm.get('contactDetails')"
+      >
+        <ng-template matStepLabel>Bank Details</ng-template>
+        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="contactDetails"
+        [stepControl]="registrationForm.get('contactDetails')"
+      >
+        <ng-template matStepLabel>Professional Details</ng-template>
+        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="contactDetails"
+        [stepControl]="registrationForm.get('contactDetails')"
+      >
+        <ng-template matStepLabel>Education Details</ng-template>
+        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="contactDetails"
+        [stepControl]="registrationForm.get('contactDetails')"
+      >
+        <ng-template matStepLabel>Experience Details</ng-template>
+        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Current organization Details</ng-template>
+        <app-professional-detail
+          [regForm]="registrationForm"
+        ></app-professional-detail>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</div>
