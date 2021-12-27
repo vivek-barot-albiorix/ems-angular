@@ -14,6 +14,27 @@ export class ProfessionalDetailComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // step3Submitted() {
+  //   this.regForm.get('professionalDetails').get('designation').markAsTouched();
+  //   this.regForm
+  //     .get('professionalDetails')
+  //     .get('designation')
+  //     .updateValueAndValidity();
+  //   this.regForm.get('professionalDetails').get('department').markAsTouched();
+  //   this.regForm
+  //     .get('professionalDetails')
+  //     .get('department')
+  //     .updateValueAndValidity();
+  //   this.regForm
+  //     .get('professionalDetails')
+  //     .get('currentLocation')
+  //     .markAsTouched();
+  //   this.regForm
+  //     .get('professionalDetails')
+  //     .get('currentLocation')
+  //     .updateValueAndValidity();
+  // }
+
   submit() {
     console.log('submitted');
     console.log(this.regForm.value);

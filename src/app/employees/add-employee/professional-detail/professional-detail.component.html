@@ -1,14 +1,48 @@
 <div *ngIf="formSubmitted">
-    <h4>Details submitted successfully</h4>
+  <h4>Details submitted successfully</h4>
+</div>
+<div *ngIf="!formSubmitted">
+  <h4>Following details submitted, please confirm and hit submit</h4>
+  <br />Name: {{ regForm.get("personalDetails").get("firstname").value }}
+  {{ regForm.get("personalDetails").get("lastname").value }}
+  <br />Email : {{ regForm.get("contactDetails").get("email").value }}
+  <br />Phone :{{ regForm.get("contactDetails").get("phone").value }}
+  <br />
+  <button type="button" matStepperPrevious>Back</button>
+  &nbsp;
+  <button type="button" (click)="submit()">Submit</button>
+</div>
+
+<!-- <mat-card class="mt-3">
+  <div class="text-center">
+    <label class="professionalDetailsLabel">Professional Details</label>
   </div>
-  <div *ngIf="!formSubmitted">
-    <h4>Following details submitted, please confirm and hit submit</h4>
-    <br/>Name: {{regForm.get('personalDetails').get('firstname').value}} 
-      {{regForm.get('personalDetails').get('lastname').value}}
-    <br/>Email : {{regForm.get('contactDetails').get('email').value}}
-    <br/>Phone :{{regForm.get('contactDetails').get('phone').value}}
-    <br/>
-    <button type="button" matStepperPrevious>Back</button>
-    &nbsp;
-    <button type="button" (click)="submit()">Submit</button>
+  <div id="professional-details" [formGroup]="regForm">
+    <mat-form-field
+      class="col-4 setInputField"
+      formGroupName="professionalDetails"
+      appearance="fill"
+    >
+      <mat-label>Designation</mat-label>
+      <input matInput formControlName="designation" />
+    </mat-form-field>
+    <mat-form-field
+      class="col-4 setInputField"
+      formGroupName="professionalDetails"
+      appearance="fill"
+    >
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" />
+    </mat-form-field>
+    <mat-form-field
+      class="col-4"
+      formGroupName="professionalDetails"
+      appearance="fill"
+    >
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="currentLocation" />
+    </mat-form-field>
   </div>
+</mat-card>
+<br />
+<button type="button" matStepperNext (click)="step3Submitted()">Next</button> -->

@@ -14,7 +14,23 @@ export class BankDetailComponent implements OnInit {
   ngOnInit(): void {}
 
   step2Submitted() {
-    this.regForm.get('contactDetails').get('email').markAsTouched();
-    this.regForm.get('contactDetails').get('email').updateValueAndValidity();
+    this.regForm.get('bankDetails').get('bankName').markAsTouched();
+    this.regForm.get('bankDetails').get('bankName').updateValueAndValidity();
+    this.regForm.get('bankDetails').get('accountType').markAsTouched();
+    this.regForm.get('bankDetails').get('accountType').updateValueAndValidity();
+    this.regForm.get('bankDetails').get('accountNumber').markAsTouched();
+    this.regForm
+      .get('bankDetails')
+      .get('accountNumber')
+      .updateValueAndValidity();
+    this.regForm.get('bankDetails').get('IFSCCode').markAsTouched();
+    this.regForm.get('bankDetails').get('IFSCCode').updateValueAndValidity();
+    this.regForm.get('bankDetails').get('aadharNumber').markAsTouched();
+    this.regForm
+      .get('bankDetails')
+      .get('aadharNumber')
+      .updateValueAndValidity();
+    this.regForm.get('bankDetails').get('panNumber').markAsTouched();
+    this.regForm.get('bankDetails').get('panNumber').updateValueAndValidity();
   }
 }

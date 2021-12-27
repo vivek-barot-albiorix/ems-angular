@@ -9,39 +9,40 @@
         <app-personal-detail [regForm]="registrationForm"></app-personal-detail>
       </mat-step>
       <mat-step
-        formGroupName="contactDetails"
-        [stepControl]="registrationForm.get('contactDetails')"
+        formGroupName="bankDetails"
+        [stepControl]="registrationForm.get('bankDetails')"
       >
         <ng-template matStepLabel>Bank Details</ng-template>
         <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
       </mat-step>
-      <mat-step
-        formGroupName="contactDetails"
-        [stepControl]="registrationForm.get('contactDetails')"
-      >
+      <!-- <mat-step
+        formGroupName="professionalDetails"
+        [stepControl]="registrationForm.get('professionalDetails')"
+      > -->
+      <mat-step>
         <ng-template matStepLabel>Professional Details</ng-template>
-        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+        <app-personal-detail [regForm]="registrationForm"></app-personal-detail>
       </mat-step>
-      <mat-step
-        formGroupName="contactDetails"
-        [stepControl]="registrationForm.get('contactDetails')"
+      <!-- <mat-step
+        formGroupName="educationDetails"
+        [stepControl]="registrationForm.get('educationDetails')"
       >
         <ng-template matStepLabel>Education Details</ng-template>
         <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
       </mat-step>
       <mat-step
-        formGroupName="contactDetails"
-        [stepControl]="registrationForm.get('contactDetails')"
+        formGroupName="experienceDetails"
+        [stepControl]="registrationForm.get('experienceDetails')"
       >
         <ng-template matStepLabel>Experience Details</ng-template>
         <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
-      </mat-step>
-      <mat-step>
+      </mat-step>-->
+      <!-- <mat-step>
         <ng-template matStepLabel>Current organization Details</ng-template>
         <app-professional-detail
           [regForm]="registrationForm"
         ></app-professional-detail>
-      </mat-step>
+      </mat-step> -->
     </mat-horizontal-stepper>
   </form>
 </div>
