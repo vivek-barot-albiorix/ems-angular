@@ -8,17 +8,10 @@ import { FormGroup } from '@angular/forms';
 })
 export class PersonalDetailComponent implements OnInit {
   @Input() regForm: FormGroup;
-  formSubmitted: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  submit() {
-    console.log('submitted');
-    console.log(this.regForm.value);
-    this.formSubmitted = true;
-  }
 
   step1Submitted() {
     this.regForm.get('personalDetails').get('firstName').markAsTouched();
@@ -44,19 +37,21 @@ export class PersonalDetailComponent implements OnInit {
       .get('mobileNumber')
       .updateValueAndValidity();
     this.regForm.get('personalDetails').get('contactNumber').markAsTouched();
-    // this.regForm
-    //   .get('personalDetails')
-    //   .get('contactNumber')
-    //   .updateValueAndValidity();
-    // this.regForm.get('personalDetails').get('presentAddress').markAsTouched();
-    // this.regForm
-    //   .get('personalDetails')
-    //   .get('presentAddress')
-    //   .updateValueAndValidity();
-    // this.regForm.get('personalDetails').get('permanentAddress').markAsTouched();
-    // this.regForm
-    //   .get('personalDetails')
-    //   .get('permanentAddress')
-    //   .updateValueAndValidity();
+    this.regForm
+      .get('personalDetails')
+      .get('contactNumber')
+      .updateValueAndValidity();
+    this.regForm.get('personalDetails').get('dob').markAsTouched();
+    this.regForm.get('personalDetails').get('dob').updateValueAndValidity();
+    this.regForm.get('personalDetails').get('presentAddress').markAsTouched();
+    this.regForm
+      .get('personalDetails')
+      .get('presentAddress')
+      .updateValueAndValidity();
+    this.regForm.get('personalDetails').get('permanentAddress').markAsTouched();
+    this.regForm
+      .get('personalDetails')
+      .get('permanentAddress')
+      .updateValueAndValidity();
   }
 }

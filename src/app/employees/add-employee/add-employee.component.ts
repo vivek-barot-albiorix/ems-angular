@@ -1,10 +1,6 @@
+import { Constants } from './../../constants';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,12 +8,9 @@ import {
   styleUrls: ['./add-employee.component.scss'],
 })
 export class AddEmployeeComponent implements OnInit {
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
   registrationForm: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.registrationForm = new FormGroup({
@@ -30,28 +23,42 @@ export class AddEmployeeComponent implements OnInit {
         // contactNumber: new FormControl(null, Validators.required),
         // presentAddress: new FormControl(null, Validators.required),
         // permanentAddress: new FormControl(null, Validators.required),
+        // dob: new FormControl(new Date(), Validators.required),
         firstName: new FormControl(null),
         middleName: new FormControl(null),
         lastName: new FormControl(null),
         email: new FormControl(null, Validators.email),
         mobileNumber: new FormControl(null),
         contactNumber: new FormControl(null),
-        // presentAddress: new FormControl(null),
-        // permanentAddress: new FormControl(null),
+        dob: new FormControl(new Date()),
+        presentAddress: new FormControl(null),
+        permanentAddress: new FormControl(null),
       }),
       bankDetails: new FormGroup({
-        bankName: new FormControl(null, Validators.required),
-        accountType: new FormControl(null, Validators.required),
-        accountNumber: new FormControl(null, Validators.required),
-        IFSCCode: new FormControl(null, Validators.required),
-        aadharNumber: new FormControl(null, Validators.required),
-        panNumber: new FormControl(null, Validators.required),
+        // bankName: new FormControl(null, Validators.required),
+        // accountType: new FormControl(null, Validators.required),
+        // accountNumber: new FormControl(null, Validators.required),
+        // IFSCCode: new FormControl(null, Validators.required),
+        // aadharNumber: new FormControl(null, Validators.required),
+        // panNumber: new FormControl(null, Validators.required),
+        bankName: new FormControl(null),
+        accountType: new FormControl(null),
+        accountNumber: new FormControl(0),
+        IFSCCode: new FormControl(null),
+        aadharNumber: new FormControl(0),
+        panNumber: new FormControl(null),
       }),
-      // professionalDetails: new FormGroup({
-      //   designation: new FormControl(null, Validators.required),
-      //   department: new FormControl(null, Validators.required),
-      //   currentLocation: new FormControl(null, Validators.required),
-      // }),
+      professionalDetails: new FormGroup({
+        // designation: new FormControl(null, Validators.required),
+        // department: new FormControl(null, Validators.required),
+        // currentLocation: new FormControl(null, Validators.required),
+        designation: new FormControl(null),
+        department: new FormControl(null),
+        expYears: new FormControl(Constants.expInYears[0].value),
+        expMonths: new FormControl(null),
+        currentLocation: new FormControl(null),
+        skills: new FormControl(null),
+      }),
       // educationDetails: new FormGroup({
       //   bankName: new FormControl(null, Validators.required),
       //   accountType: new FormControl(null, Validators.required),

@@ -1,3 +1,4 @@
+import { Constants } from './../../../constants';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
@@ -8,36 +9,53 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProfessionalDetailComponent implements OnInit {
   @Input() regForm: FormGroup;
-  formSubmitted: boolean = false;
+  skills = Constants.skills;
+  expInYears = Constants.expInYears;
+  expInMonths = Constants.expInMonths;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  // step3Submitted() {
-  //   this.regForm.get('professionalDetails').get('designation').markAsTouched();
-  //   this.regForm
-  //     .get('professionalDetails')
-  //     .get('designation')
-  //     .updateValueAndValidity();
-  //   this.regForm.get('professionalDetails').get('department').markAsTouched();
-  //   this.regForm
-  //     .get('professionalDetails')
-  //     .get('department')
-  //     .updateValueAndValidity();
-  //   this.regForm
-  //     .get('professionalDetails')
-  //     .get('currentLocation')
-  //     .markAsTouched();
-  //   this.regForm
-  //     .get('professionalDetails')
-  //     .get('currentLocation')
-  //     .updateValueAndValidity();
-  // }
-
-  submit() {
-    console.log('submitted');
-    console.log(this.regForm.value);
-    this.formSubmitted = true;
+  step3Submitted() {
+    this.regForm.get('professionalDetails').get('designation').markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('designation')
+      .updateValueAndValidity();
+    this.regForm.get('professionalDetails').get('department').markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('department')
+      .updateValueAndValidity();
+    this.regForm.get('professionalDetails').get('expYears').markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('expYears')
+      .updateValueAndValidity();
+    this.regForm.get('professionalDetails').get('expMonths').markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('expMonths')
+      .updateValueAndValidity();
+    this.regForm
+      .get('professionalDetails')
+      .get('currentLocation')
+      .markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('currentLocation')
+      .updateValueAndValidity();
+    this.regForm.get('professionalDetails').get('skills').markAsTouched();
+    this.regForm
+      .get('professionalDetails')
+      .get('skills')
+      .updateValueAndValidity();
   }
+
+  // submit() {
+  //   console.log('submitted');
+  //   console.log(this.regForm.value);
+  //   this.formSubmitted = true;
+  // }
 }

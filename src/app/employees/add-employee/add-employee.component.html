@@ -15,22 +15,26 @@
         <ng-template matStepLabel>Bank Details</ng-template>
         <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
       </mat-step>
-      <!-- <mat-step
+      <mat-step
         formGroupName="professionalDetails"
         [stepControl]="registrationForm.get('professionalDetails')"
-      > -->
-      <mat-step>
+      >
         <ng-template matStepLabel>Professional Details</ng-template>
-        <app-personal-detail [regForm]="registrationForm"></app-personal-detail>
+        <app-professional-detail
+          [regForm]="registrationForm"
+        ></app-professional-detail>
       </mat-step>
       <!-- <mat-step
         formGroupName="educationDetails"
         [stepControl]="registrationForm.get('educationDetails')"
-      >
+      > -->
+      <mat-step>
         <ng-template matStepLabel>Education Details</ng-template>
-        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+        <app-education-detail
+          [regForm]="registrationForm"
+        ></app-education-detail>
       </mat-step>
-      <mat-step
+      <!-- <mat-step
         formGroupName="experienceDetails"
         [stepControl]="registrationForm.get('experienceDetails')"
       >

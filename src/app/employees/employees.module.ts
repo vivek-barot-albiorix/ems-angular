@@ -9,6 +9,9 @@ import { PersonalDetailComponent } from './add-employee/personal-detail/personal
 import { BankDetailComponent } from './add-employee/bank-detail/bank-detail.component';
 import { ProfessionalDetailComponent } from './add-employee/professional-detail/professional-detail.component';
 import { MaterialExampleModule } from '../material.module';
+import { EducationDetailComponent } from './add-employee/education-detail/education-detail.component';
+import { ExperienceDetailComponent } from './add-employee/experience-detail/experience-detail.component';
+import { OrganizationDetailComponent } from './add-employee/organization-detail/organization-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { MaterialExampleModule } from '../material.module';
     PersonalDetailComponent,
     BankDetailComponent,
     ProfessionalDetailComponent,
+    EducationDetailComponent,
+    ExperienceDetailComponent,
+    OrganizationDetailComponent,
   ],
   imports: [
     EmployeesRoutingModule,
@@ -28,6 +34,7 @@ import { MaterialExampleModule } from '../material.module';
     PersonalDetailComponent,
     BankDetailComponent,
     ProfessionalDetailComponent,
+    EducationDetailComponent,
   ],
 })
 export class EmployeesModule {}
