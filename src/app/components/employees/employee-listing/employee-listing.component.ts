@@ -14,7 +14,7 @@ export class EmployeeListingComponent implements OnInit {
   }
 
   async _faqs() {
-    const url = '/users';
+    const url = '/user/getUserList';
     await this.http.get(url).subscribe({
       next: (data: any) => {
         console.log(data);
