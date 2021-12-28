@@ -8,10 +8,10 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { PersonalDetailComponent } from './add-employee/personal-detail/personal-detail.component';
 import { BankDetailComponent } from './add-employee/bank-detail/bank-detail.component';
 import { ProfessionalDetailComponent } from './add-employee/professional-detail/professional-detail.component';
-import { MaterialExampleModule } from '../material.module';
 import { EducationDetailComponent } from './add-employee/education-detail/education-detail.component';
 import { ExperienceDetailComponent } from './add-employee/experience-detail/experience-detail.component';
 import { OrganizationDetailComponent } from './add-employee/organization-detail/organization-detail.component';
+import { MaterialExampleModule } from './../../material.module';
 
 @NgModule({
   declarations: [

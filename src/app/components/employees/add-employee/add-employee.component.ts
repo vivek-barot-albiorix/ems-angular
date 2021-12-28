@@ -1,6 +1,7 @@
-import { Constants } from './../../constants';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Constants } from './../../../constants';
 
 @Component({
   selector: 'app-add-employee',

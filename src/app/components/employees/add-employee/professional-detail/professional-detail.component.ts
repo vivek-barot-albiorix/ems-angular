@@ -1,6 +1,7 @@
-import { Constants } from './../../../constants';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+
+import { Constants } from './../../../../constants';
 
 @Component({
   selector: 'app-professional-detail',
