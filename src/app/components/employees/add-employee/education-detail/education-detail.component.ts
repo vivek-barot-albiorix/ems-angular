@@ -8,15 +8,17 @@ import { FormGroup } from '@angular/forms';
 })
 export class EducationDetailComponent implements OnInit {
   @Input() regForm: FormGroup;
-  formSubmitted: boolean = false;
+  // formSubmitted: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  submit() {
-    console.log('submitted');
-    console.log(this.regForm.value);
-    this.formSubmitted = true;
-  }
+  // submit() {
+  //   console.log('submitted');
+  //   console.log(this.regForm.value);
+  //   this.formSubmitted = true;
+  // }
+
+  step4Submitted() {}
 }
