@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-education-detail',
@@ -9,10 +9,41 @@ import { FormGroup } from '@angular/forms';
 export class EducationDetailComponent implements OnInit {
   @Input() regForm: FormGroup;
   // formSubmitted: boolean = false;
+  items: FormArray;
+  skillsForm: FormGroup;
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.skillsForm = this.fb.group({
+      skills: this.fb.array([]),
+    });
+  }
+
+  public skills(): FormArray {
+    return this.skillsForm.get('skills') as FormArray;
+  }
+
+  newSkill(): FormGroup {
+    return this.fb.group({
+      educationName: '',
+      universityName: '',
+      result: '',
+      passingYear: 0
+    });
+  }
+
+  addSkills() {
+    this.skills().push(this.newSkill());
+  }
+
+  removeSkill(i: number) {
+    this.skills().removeAt(i);
+  }
+
+  onSubmit() {
+    console.log(this.skillsForm.value);
+  }
 
   // submit() {
   //   console.log('submitted');

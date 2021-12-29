@@ -9,6 +9,35 @@
   <button type="button" (click)="submit()">Submit</button>
 </div> -->
 
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills().controls; let i = index">
+      <div [formGroupName]="i">
+        <!-- {{ i }} -->
+        Education Name:
+        <input type="text" formControlName="educationName" />
+        University Name:
+        <input type="text" formControlName="universityName" />
+        Result:
+        <input type="text" formControlName="result" />
+        Year Of Passing:
+        <input type="number" formControlName="passingYear" />
+        <button (click)="removeSkill(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <p>
+    <button type="submit">Submit</button>
+  </p> -->
+</form>
+
+<p>
+  <button type="button" (click)="addSkills()">Add</button>
+</p>
+
+<!-- {{ this.skillsForm.value | json }} -->
+
 <br />
 <button type="button" matStepperPrevious>Back</button>
 &nbsp;
