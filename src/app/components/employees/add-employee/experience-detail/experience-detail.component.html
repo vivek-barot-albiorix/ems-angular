@@ -1,0 +1,10 @@
+<div *ngIf="formSubmitted">
+    <h4>Details submitted successfully</h4>
+  </div>
+  <div *ngIf="!formSubmitted">
+    <h4>Following details submitted, please confirm and hit submit</h4>
+    <br />
+    <button type="button" matStepperPrevious>Back</button>
+    &nbsp;
+    <button type="button" (click)="submit()">Submit</button>
+  </div>

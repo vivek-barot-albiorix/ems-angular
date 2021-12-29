@@ -1,0 +1,54 @@
+<div id="registration" class="conatiner col-md-12">
+  <form id="regForm" [formGroup]="registrationForm">
+    <mat-horizontal-stepper #stepper linear>
+      <mat-step
+        formGroupName="personalDetails"
+        [stepControl]="registrationForm.get('personalDetails')"
+      >
+        <ng-template matStepLabel>Personal Details</ng-template>
+        <app-personal-detail [regForm]="registrationForm"></app-personal-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="bankDetails"
+        [stepControl]="registrationForm.get('bankDetails')"
+      >
+        <ng-template matStepLabel>Bank Details</ng-template>
+        <app-bank-detail [regForm]="registrationForm"></app-bank-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="professionalDetails"
+        [stepControl]="registrationForm.get('professionalDetails')"
+      >
+      <!-- <mat-step> -->
+        <ng-template matStepLabel>Professional Details</ng-template>
+        <app-professional-detail
+          [regForm]="registrationForm"
+        ></app-professional-detail>
+      </mat-step>
+      <mat-step
+        formGroupName="educationDetails"
+        [stepControl]="registrationForm.get('educationDetails')"
+      >
+      <!-- <mat-step> -->
+        <ng-template matStepLabel>Education Details</ng-template>
+        <app-education-detail
+          [regForm]="registrationForm"
+        ></app-education-detail>
+      </mat-step>
+      <!-- <mat-step
+        formGroupName="experienceDetails"
+        [stepControl]="registrationForm.get('experienceDetails')"
+      > -->
+      <mat-step>
+        <ng-template matStepLabel>Experience Details</ng-template>
+        <app-experience-detail [regForm]="registrationForm"></app-experience-detail>
+      </mat-step>
+      <!-- <mat-step>
+        <ng-template matStepLabel>Current organization Details</ng-template>
+        <app-professional-detail
+          [regForm]="registrationForm"
+        ></app-professional-detail>
+      </mat-step> -->
+    </mat-horizontal-stepper>
+  </form>
+</div>
