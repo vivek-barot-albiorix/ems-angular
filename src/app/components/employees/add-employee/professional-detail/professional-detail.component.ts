@@ -16,7 +16,7 @@ export class ProfessionalDetailComponent implements OnInit {
   expInMonths = Constants.expInMonths;
   // formSubmitted: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
